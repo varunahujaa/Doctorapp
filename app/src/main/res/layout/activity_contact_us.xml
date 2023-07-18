@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue2"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:layout_gravity="center"
+        android:text="@string/contact_us"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:fontFamily="@font/poppins_medium"
+        android:letterSpacing="0.04"
+        android:includeFontPadding="false" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/doctor2"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="16dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_login"
+        android:layout_below="@id/imageView"
+        android:id="@+id/callus"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/callusText"
+            android:text="Call Us:"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_bold"
+            android:letterSpacing="0.04"
+            android:includeFontPadding="false"
+            android:layout_marginStart="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+91 - 9999988888"
+            android:textSize="18sp"
+            android:textColor="@color/green"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_toEndOf="@id/callusText"
+            android:layout_marginStart="6dp"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="18dp"
+            android:src="@drawable/right_arrow"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_centerVertical="true"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Response time: within 5 minutes"
+            android:textSize="15sp"
+            android:textColor="@color/green"
+            android:layout_below="@id/callusText"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_login"
+        android:layout_below="@id/callus"
+        android:id="@+id/emailus"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailusText"
+            android:text="Email Us:"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_bold"
+            android:letterSpacing="0.04"
+            android:includeFontPadding="false"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xyz@gmail.com"
+            android:textSize="18sp"
+            android:textColor="@color/green"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_toEndOf="@id/emailusText"
+            android:layout_marginStart="4dp"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="18dp"
+            android:src="@drawable/right_arrow"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_centerVertical="true"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Response time: within 5 minutes"
+            android:textSize="15sp"
+            android:textColor="@color/green"
+            android:layout_below="@id/emailusText"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

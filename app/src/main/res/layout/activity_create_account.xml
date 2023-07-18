@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue2"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue2"
+        android:fillViewport="false"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:weightSum="16"
+            tools:context=".CreateAccount">
+
+<!--            <TextView-->
+<!--                android:id="@+id/logo"-->
+<!--                android:layout_width="120dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:layout_weight="2"-->
+<!--                android:text="MediZone"-->
+<!--                android:fontFamily="@font/poppins_bold"-->
+<!--                android:gravity="center"-->
+<!--                android:textColor="@color/viking"-->
+<!--                android:textSize="17sp"/>-->
+
+            <TextView
+                android:id="@+id/Create"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/poppins_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.04"
+                android:maxLines="1"
+                android:text="@string/choose_what_you_are"
+                android:textAlignment="gravity"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:targetApi="o" />
+
+            <RadioGroup
+                android:id="@+id/acctype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:checkedButton="@+id/checkCustomer"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/checkCustomer"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:drawableEnd="@drawable/patient"
+                    android:paddingEnd="6dp"
+                    android:paddingStart="4dp"
+                    android:background="@drawable/radio_background"
+                    android:fontFamily="@font/poppins_regular"
+                    android:includeFontPadding="false"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="@string/patient"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/black"
+                    tools:ignore="UsingOnClickInXml" />
+
+                <RadioButton
+                    android:id="@+id/checkServiceProvider"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/black"
+                    android:background="@drawable/radio_background"
+                    android:fontFamily="@font/poppins_regular"
+                    android:includeFontPadding="false"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="@string/doctor"
+                    android:drawableEnd="@drawable/doctor_icon"
+                    android:paddingEnd="6dp"
+                    android:paddingStart="4dp"
+                    android:textColor="@color/black"
+                    tools:ignore="UsingOnClickInXml" />
+            </RadioGroup>
+
+            <Spinner
+                android:id="@+id/categories"
+                style="@style/Widget.AppCompat.Spinner.DropDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:scrollbarStyle="outsideInset"
+                android:text="@string/select_category"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editext_background"
+                    android:elevation="2dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/first_name"
+                    android:includeFontPadding="false"
+                    android:inputType="textCapWords"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    tools:ignore="NestedWeights" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/gray_black"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editext_background"
+                    android:elevation="2dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/last_name"
+                    android:includeFontPadding="false"
+                    android:inputType="textCapWords"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/gray_black"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/editext_background"
+                android:elevation="2dp"
+                android:textColor="@color/black"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/email_address"
+                android:includeFontPadding="false"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textSize="14sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/gray_black"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/white"
+                    android:text="@string/_91"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/editext_background"
+                        android:elevation="2dp"
+                        android:ems="10"
+                        android:fontFamily="@font/poppins_regular"
+                        android:hint="@string/phone_number"
+                        android:includeFontPadding="false"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/gray_black"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <RadioGroup
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <RadioButton
+                    android:id="@+id/checkMale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/male" />
+
+                <RadioButton
+                    android:id="@+id/checkFemale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/female" />
+
+                <RadioButton
+                    android:id="@+id/checkOthers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/others" />
+            </RadioGroup>
+
+            <Spinner
+                android:id="@+id/citylist"
+                style="@style/mySpinnerItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:scrollbarStyle="outsideInset"
+                android:text="Select City"
+                android:textSize="16sp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <EditText
+                    android:id="@+id/pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editext_background"
+                    android:elevation="2dp"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    android:hint="@string/password"
+                    android:includeFontPadding="false"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    tools:ignore="NestedWeights" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/gray_black"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"/>
+
+                <EditText
+                    android:id="@+id/confirmpwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editext_background"
+                    android:elevation="2dp"
+                    android:ems="10"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    android:hint="@string/confirm_password"
+                    android:includeFontPadding="false"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:textSize="14sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/gray_black"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"/>
+            </LinearLayout>
+
+
+            <ProgressBar
+                android:id="@+id/pBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:minWidth="50dp"
+                android:minHeight="50dp"
+                android:layout_margin="6dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/button_login"
+                android:clickable="false"
+                android:fontFamily="@font/poppins_medium"
+                android:letterSpacing="0.04"
+                android:includeFontPadding="false"
+                android:text="@string/submit"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="19sp" />
+
+            <Button
+                android:id="@+id/btNext"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button_login"
+                android:clickable="false"
+                android:letterSpacing="0.04"
+                android:fontFamily="@font/poppins_medium"
+                android:includeFontPadding="false"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="19sp"
+                android:layout_marginTop="-55dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/already_have_an_account"
+                    android:textSize="14sp"
+                    android:letterSpacing="0.04"
+                    android:textColor="@color/white"
+                    android:includeFontPadding="false"/>
+
+                <TextView
+                    android:id="@+id/signin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:letterSpacing="0.04"
+                    android:includeFontPadding="false"
+                    android:text="@string/login"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

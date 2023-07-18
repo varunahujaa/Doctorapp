@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/blue1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/appointment_form"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/fill_out_the_service_details"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.01"
+            tools:targetApi="o" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:padding="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/blue1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:text="@string/date"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.01"/>
+
+            <EditText
+                android:id="@+id/date_text"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="8"
+                android:focusable="false"
+                android:hint="@string/pick_a_date"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:background="@drawable/otp_back"
+                android:elevation="2dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:inputType="none"
+                tools:ignore="TextFields" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:padding="8dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/blue1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:text="@string/time"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.01" />
+
+            <EditText
+                android:id="@+id/time_text"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="8"
+                android:focusable="false"
+                android:hint="@string/pick_a_time"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"
+                android:background="@drawable/otp_back"
+                android:elevation="2dp"
+                android:paddingTop="8dp"
+                android:textColor="@color/black"
+                android:paddingBottom="8dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:inputType="none"
+                tools:ignore="TextFields"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/blue1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="3"
+                android:layout_marginStart="2dp"
+                android:text="@string/description"
+                android:fontFamily="@font/poppins_medium"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.03"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+
+            <EditText
+                android:id="@+id/job_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:cursorVisible="false"
+                android:defaultFocusHighlightEnabled="false"
+                android:focusableInTouchMode="true"
+                android:gravity="left|top"
+                android:hint="say something about your problem"
+                android:inputType="textMultiLine"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:background="@drawable/otp_back"
+                android:elevation="2dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_margin="4dp"
+                tools:ignore="TextFields" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/send_service_request_btn"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/button_payment"
+            android:text="Send"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.06"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</ScrollView>

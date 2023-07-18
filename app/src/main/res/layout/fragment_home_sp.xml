@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/blue1"
+    android:paddingTop="26dp">
+
+    <RelativeLayout
+        android:layout_width="340dp"
+        android:layout_height="140dp"
+        android:orientation="vertical"
+        android:background="@drawable/active_card"
+        android:elevation="3dp"
+        android:layout_marginTop="36dp"
+        android:layout_gravity="center">
+
+<!--        <ImageView-->
+<!--            android:layout_width="74dp"-->
+<!--            android:layout_height="74dp"-->
+<!--            android:layout_gravity="end"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:src="@drawable/active_app"/>-->
+
+        <Button
+            android:id="@+id/request_active"
+            android:onClick="onServiceClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:textAlignment="textStart"
+            android:layout_centerHorizontal="true"
+            android:paddingStart="18dp"
+            android:paddingEnd="12dp"
+            android:text="@string/active_request_nclick_to_see_all_requests"
+            android:textSize="22sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.02"
+            android:padding="4dp"
+            android:textAllCaps="true"
+            android:includeFontPadding="false"
+            tools:ignore="RtlCompat" />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="340dp"
+        android:layout_height="140dp"
+        android:orientation="horizontal"
+        android:background="@drawable/pending_card"
+        android:elevation="3dp"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/request_pending"
+            android:onClick="onServiceClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="textStart"
+            android:paddingStart="18dp"
+            android:paddingEnd="12dp"
+            android:text="@string/pending_requests"
+            android:textSize="22sp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.02"
+            android:padding="4dp"
+            android:textAllCaps="true"
+            android:includeFontPadding="false"
+            tools:ignore="RtlCompat" />
+
+<!--        <ImageView-->
+<!--            android:layout_width="64dp"-->
+<!--            android:layout_height="64dp"-->
+<!--            android:src="@drawable/pending_request"-->
+<!--            android:padding="12dp"-->
+<!--            android:layout_gravity="end"/>-->
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="340dp"
+        android:layout_height="140dp"
+        android:orientation="horizontal"
+        android:background="@drawable/complete_card"
+        android:elevation="3dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/request_completed"
+            android:onClick="onServiceClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="textStart"
+            android:paddingStart="18dp"
+            android:paddingEnd="12dp"
+            android:text="@string/complete_request"
+            android:textSize="22sp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.02"
+            android:padding="4dp"
+            android:textAllCaps="true"
+            android:includeFontPadding="false"
+            tools:ignore="RtlCompat" />
+
+<!--        <ImageView-->
+<!--            android:layout_width="64dp"-->
+<!--            android:layout_height="64dp"-->
+<!--            android:src="@drawable/comlete_request"-->
+<!--            android:padding="12dp"-->
+<!--            android:layout_gravity="end"/>-->
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

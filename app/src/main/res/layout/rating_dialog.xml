@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/logo_main"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medi"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zone"
+            android:textSize="17sp"
+            android:textColor="@color/blue1"
+            android:fontFamily="@font/poppins_bold"
+            android:includeFontPadding="false"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_medium"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.04"
+        android:text="@string/rate_this_service_provider"
+        android:textColor="@android:color/black"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_light"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.04"
+        android:text="@string/review_to_sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:isIndicator="false"
+        android:max="5"
+        android:progressTint="@color/orange1"
+        android:stepSize="1" />
+
+    <TextView
+        android:id="@+id/word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_regular"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.03"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="6dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:hint="@string/please_write_your_comment_here"
+            android:textColorHint="@color/white_light"
+            android:textColor="@color/white"
+            android:padding="18dp"
+            android:layout_margin="16dp"
+            android:elevation="4dp"
+            android:fontFamily="@font/poppins_regular"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.03"
+            android:textSize="16sp"
+            android:background="@drawable/button_login"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/button_decline"
+            android:clickable="true"
+            android:text="@string/cancel"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.03"
+            android:focusable="true" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_payment"
+            android:clickable="true"
+            android:text="@string/submit"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.03"
+            android:focusable="true" />
+
+    </LinearLayout>
+</LinearLayout>

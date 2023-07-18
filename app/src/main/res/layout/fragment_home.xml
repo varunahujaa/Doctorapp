@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue1"
+    android:scrollbars="none">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="70dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Your health is your priority"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                android:fontFamily="@font/poppins_medium"
+                android:letterSpacing="0.02"
+                android:includeFontPadding="false"/>
+
+
+            <androidx.cardview.widget.CardView
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/findNearByHospitals"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="6dp"
+                android:layout_margin="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="@color/green">
+
+                    <TextView
+                        android:id="@+id/nr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Find nearby hospitals"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue1"
+                        android:fontFamily="@font/poppins_medium"
+                        android:letterSpacing="0.03"
+                        android:textSize="16sp"
+                        android:includeFontPadding="false"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"/>
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/hospital"
+                        app:tint="@color/blue1"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chatBot"
+                android:onClick="onChatBotClick"
+                android:src="@drawable/chatbot"
+                app:backgroundTint="@color/black"
+                android:layout_gravity="end"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/app_name" />
+
+            <RelativeLayout
+                android:id="@+id/catRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp">
+
+                <RelativeLayout
+                    android:id="@+id/categoriesText"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp">
+
+                    <TextView
+                        android:id="@+id/c_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/categories"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/white"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0.04"
+                        android:textSize="16sp"
+                        android:textAllCaps="true"/>
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="3dp"
+                        android:background="@color/yellow"
+                        android:layout_below="@id/c_tv"
+                        android:layout_alignEnd="@id/c_tv"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:weightSum="3"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_below="@id/categoriesText">
+
+                    <LinearLayout
+                        android:id="@+id/acrepair_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/card_background">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/cardio"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cardiologist"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.04"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/carpenter_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/card_background"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/audio"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Audiologist"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.03"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ceiling_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:background="@drawable/card_background">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/dentist"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dentist"
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.04"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/cleaning_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/card_background"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ent"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ENT"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.03"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="4dp"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/electrician_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/card_background">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/gyno"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gynaecologist"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.03"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="4dp"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/flooring_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:background="@drawable/card_background"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ortho"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Orthopaedic"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="4dp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.03"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:weightSum="3"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/gardener_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/card_background">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/peadia"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Paediatrician"
+                            android:padding="4dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.03"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/general_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/card_background"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/psychiatrist"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Psychiatrists"
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.03"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/gutter_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:background="@drawable/card_background">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/veterian"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Veterinarian"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.04"
+                            android:padding="4dp"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:weightSum="3"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp">
+
+
+                    <LinearLayout
+                        android:id="@+id/interior_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/card_background"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/radio"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Radiologist"
+                            android:padding="4dp"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.03"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/maid_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/card_background">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/pulmonologist"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pulmonologist"
+                            android:padding="4dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.01"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/painter_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:background="@drawable/card_background"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/endocrinologist"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Endocrinology"
+                            android:padding="4dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:weightSum="3"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/plumber_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/card_background">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/oncologist"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Oncologist"
+                            android:padding="4dp"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.01"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pest_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/card_background"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/neuron"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Neurologist"
+                            android:padding="4dp"
+                            android:textSize="14sp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.01"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/water_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:background="@drawable/card_background">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/others"/>
+
+                        <TextView
+                            android:onClick="onServiceClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Others"
+                            android:padding="4dp"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_regular"
+                            android:letterSpacing="0.04"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!--        <RelativeLayout-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginTop="16dp">-->
+
+            <!--            <LinearLayout-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:gravity="center">-->
+
+            <!--                -->
+            <!--                -->
+
+            <!--            </LinearLayout>-->
+
+            <!--        </RelativeLayout>-->
+
+            <!--        <RelativeLayout-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginTop="16dp">-->
+
+            <!--            <LinearLayout-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:gravity="center">-->
+
+            <!--                -->
+
+            <!--            </LinearLayout>-->
+
+            <!--        </RelativeLayout>-->
+
+            <!--        <RelativeLayout-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginTop="16dp">-->
+
+            <!--            <LinearLayout-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:gravity="center">-->
+
+
+            <!--                <LinearLayout-->
+            <!--                    android:id="@+id/other_button"-->
+            <!--                    android:layout_width="150dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="vertical"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:paddingTop="16dp"-->
+            <!--                    android:paddingBottom="16dp"-->
+            <!--                    android:layout_marginEnd="16dp"-->
+            <!--                    android:background="@drawable/card_background">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:layout_width="84dp"-->
+            <!--                        android:layout_height="84dp"-->
+            <!--                        android:src="@drawable/water_puri"/>-->
+
+            <!--                    <TextView-->
+            <!--                        android:onClick="onServiceClick"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="Others"-->
+            <!--                        android:padding="4dp"-->
+            <!--                        android:textSize="15sp"-->
+            <!--                        android:textColor="@android:color/black"-->
+            <!--                        android:fontFamily="@font/poppins_medium"-->
+            <!--                        android:letterSpacing="0.04"-->
+            <!--                        android:layout_gravity="center"-->
+            <!--                        android:gravity="center"-->
+            <!--                        android:layout_marginTop="8dp"-->
+            <!--                        android:includeFontPadding="false"/>-->
+
+            <!--                </LinearLayout>-->
+
+
+            <!--            </LinearLayout>-->
+
+            <!--        </RelativeLayout>-->
+
+            <!--       -->
+            <!--        <Button-->
+            <!--            android:layout_width="300dp"-->
+            <!--            android:layout_height="70dp"-->
+            <!--            android:layout_gravity="center"-->
+            <!--            android:layout_marginLeft="10dp"-->
+            <!--            android:layout_marginRight="10dp"-->
+            <!--            android:layout_marginBottom="10dp"-->
+            <!--            android:background="@drawable/createnew"-->
+            <!--            android:drawableEnd="@drawable/ic_chevron_right_black_16dp"-->
+            <!--            android:gravity="start|center_vertical"-->
+            <!--            android:paddingStart="15dp"-->
+            <!--            android:stateListAnimator="@null"-->
+            <!--            android:text="Gardener"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            android:textAllCaps="false"-->
+            <!--            android:textSize="20dp"-->
+            <!--            tools:ignore="HardcodedText,RtlSymmetry,SpUsage,UnusedAttribute" />-->
+
+            <!--        <Button-->
+            <!--            android:layout_width="300dp"-->
+            <!--            android:layout_height="70dp"-->
+            <!--            android:layout_gravity="center"-->
+            <!--            android:layout_marginLeft="10dp"-->
+            <!--            android:layout_marginRight="10dp"-->
+            <!--            android:layout_marginBottom="10dp"-->
+            <!--            android:background="@drawable/createnew"-->
+            <!--            android:drawableEnd="@drawable/ic_chevron_right_black_16dp"-->
+            <!--            android:gravity="start|center_vertical"-->
+            <!--            android:paddingStart="15dp"-->
+            <!--            android:stateListAnimator="@null"-->
+            <!--            android:text="General Maintenance"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            android:textAllCaps="false"-->
+            <!--            android:textSize="20dp"-->
+            <!--            tools:ignore="HardcodedText,RtlSymmetry,SpUsage,UnusedAttribute" />-->
+
+            <!--        <Button-->
+            <!--            android:layout_width="300dp"-->
+            <!--            android:layout_height="70dp"-->
+            <!--            android:layout_gravity="center"-->
+            <!--            android:layout_marginLeft="10dp"-->
+            <!--            android:layout_marginRight="10dp"-->
+            <!--            android:layout_marginBottom="10dp"-->
+            <!--            android:background="@drawable/createnew"-->
+            <!--            android:drawableEnd="@drawable/ic_chevron_right_black_16dp"-->
+            <!--            android:gravity="start|center_vertical"-->
+            <!--            android:paddingStart="15dp"-->
+            <!--            android:stateListAnimator="@null"-->
+            <!--            android:text="Gutter Maintenance"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            android:textAllCaps="false"-->
+            <!--            android:textSize="20dp"-->
+            <!--            tools:ignore="HardcodedText,RtlSymmetry,SpUsage,UnusedAttribute" />-->
+
+            <!--        <Button-->
+            <!--            android:layout_width="300dp"-->
+            <!--            android:layout_height="70dp"-->
+            <!--            android:layout_gravity="center"-->
+            <!--            android:layout_marginLeft="10dp"-->
+            <!--            android:layout_marginRight="10dp"-->
+            <!--            android:layout_marginBottom="10dp"-->
+            <!--            android:background="@drawable/createnew"-->
+            <!--            android:drawableEnd="@drawable/ic_chevron_right_black_16dp"-->
+            <!--            android:gravity="start|center_vertical"-->
+            <!--            android:paddingStart="15dp"-->
+            <!--            android:stateListAnimator="@null"-->
+            <!--            android:text="Interior Designing"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            android:textAllCaps="false"-->
+            <!--            android:textSize="20dp"-->
+            <!--            tools:ignore="HardcodedText,RtlSymmetry,SpUsage,UnusedAttribute" />-->
+
+            <!--        <Button-->
+            <!--            android:layout_width="300dp"-->
+            <!--            android:layout_height="70dp"-->
+            <!--            android:layout_gravity="center"-->
+            <!--            android:layout_marginLeft="10dp"-->
+            <!--            android:layout_marginRight="10dp"-->
+            <!--            android:layout_marginBottom="10dp"-->
+            <!--            android:background="@drawable/createnew"-->
+            <!--            android:drawableEnd="@drawable/ic_chevron_right_black_16dp"-->
+            <!--            android:gravity="start|center_vertical"-->
+            <!--            android:paddingStart="15dp"-->
+            <!--            android:stateListAnimator="@null"-->
+            <!--            android:text="Maid Service"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            android:textAllCaps="false"-->
+            <!--            android:textSize="20dp"-->
+            <!--            tools:ignore="HardcodedText,RtlSymmetry,SpUsage,UnusedAttribute" />-->
+
+            <!--        <Button-->
+            <!--            android:layout_width="300dp"-->
+            <!--            android:layout_height="70dp"-->
+            <!--            android:layout_gravity="center"-->
+            <!--            android:layout_marginLeft="10dp"-->
+            <!--            android:layout_marginRight="10dp"-->
+            <!--            android:layout_marginBottom="10dp"-->
+            <!--            android:background="@drawable/createnew"-->
+            <!--            android:drawableEnd="@drawable/ic_chevron_right_black_16dp"-->
+            <!--            android:gravity="start|center_vertical"-->
+            <!--            android:paddingStart="15dp"-->
+            <!--            android:stateListAnimator="@null"-->
+            <!--            android:text="Painter"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            android:textAllCaps="false"-->
+            <!--            android:textSize="20dp"-->
+            <!--            tools:ignore="HardcodedText,RtlSymmetry,SpUsage,UnusedAttribute" />-->
+
+            <!--        <Button-->
+            <!--            android:layout_width="300dp"-->
+            <!--            android:layout_height="70dp"-->
+            <!--            android:layout_gravity="center"-->
+            <!--            android:layout_marginLeft="10dp"-->
+            <!--            android:layout_marginRight="10dp"-->
+            <!--            android:layout_marginBottom="10dp"-->
+            <!--            android:background="@drawable/createnew"-->
+            <!--            android:drawableEnd="@drawable/ic_chevron_right_black_16dp"-->
+            <!--            android:gravity="start|center_vertical"-->
+            <!--            android:paddingStart="15dp"-->
+            <!--            android:stateListAnimator="@null"-->
+            <!--            android:text="Plumber"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            android:textAllCaps="false"-->
+            <!--            android:textSize="20dp"-->
+            <!--            tools:ignore="HardcodedText,RtlSymmetry,SpUsage,UnusedAttribute" />-->
+
+            <!--        <Button-->
+            <!--            android:layout_width="300dp"-->
+            <!--            android:layout_height="70dp"-->
+            <!--            android:layout_gravity="center"-->
+            <!--            android:layout_marginLeft="10dp"-->
+            <!--            android:layout_marginRight="10dp"-->
+            <!--            android:layout_marginBottom="10dp"-->
+            <!--            android:background="@drawable/createnew"-->
+            <!--            android:drawableEnd="@drawable/ic_chevron_right_black_16dp"-->
+            <!--            android:gravity="start|center_vertical"-->
+            <!--            android:paddingStart="15dp"-->
+            <!--            android:stateListAnimator="@null"-->
+            <!--            android:text="Pest Control"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            android:textAllCaps="false"-->
+            <!--            android:textSize="20dp"-->
+            <!--            tools:ignore="HardcodedText,RtlSymmetry,SpUsage,UnusedAttribute" />-->
+
+            <!--        <Button-->
+            <!--            android:layout_width="300dp"-->
+            <!--            android:layout_height="70dp"-->
+            <!--            android:layout_gravity="center"-->
+            <!--            android:layout_marginLeft="10dp"-->
+            <!--            android:layout_marginRight="10dp"-->
+            <!--            android:background="@drawable/createnew"-->
+            <!--            android:drawableEnd="@drawable/ic_chevron_right_black_16dp"-->
+            <!--            android:gravity="start|center_vertical"-->
+            <!--            android:paddingStart="15dp"-->
+            <!--            android:stateListAnimator="@null"-->
+            <!--            android:text="Water Purification"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            android:textAllCaps="false"-->
+            <!--            android:textSize="20dp"-->
+            <!--            tools:ignore="HardcodedText,RtlSymmetry,SpUsage,UnusedAttribute" />-->
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+</ScrollView>

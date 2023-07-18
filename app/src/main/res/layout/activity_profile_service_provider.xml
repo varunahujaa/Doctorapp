@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue1"
+    android:fillViewport="false"
+    android:orientation="vertical"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:weightSum="16"
+        tools:context=".ProfileSP">
+
+        <TextView
+            android:id="@+id/Create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/fill_these"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:letterSpacing="0.03"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <EditText
+                android:id="@+id/Qualifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="@string/qualifications"
+                android:fontFamily="@font/poppins_regular"
+                android:includeFontPadding="false"
+                android:background="@drawable/editext_background"
+                android:elevation="2dp"
+                android:padding="10dp"
+                android:textCursorDrawable="@drawable/theme_color"
+                android:textSize="16sp"
+                android:inputType="text"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/gray_black"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <EditText
+                android:id="@+id/experience"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/years_of_experience"
+                android:inputType="numberDecimal"
+                android:fontFamily="@font/poppins_regular"
+                android:includeFontPadding="false"
+                android:background="@drawable/editext_background"
+                android:elevation="2dp"
+                android:padding="10dp"
+                android:textCursorDrawable="@drawable/theme_color"
+                android:textSize="16sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/gray_black"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/card_back">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/upload_your_profile_photo"
+                        android:textAlignment="center"
+                        android:textColor="@color/blue1"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="16sp"
+                        tools:ignore="RtlCompat"
+                        android:justificationMode="inter_word"
+                        tools:targetApi="o"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/poppins_bold"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0.04"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp">
+
+                        <Button
+                            android:id="@+id/chooser1"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:background="@drawable/radio_background"
+                            android:text="@string/choose_image"
+                            android:textSize="13sp"
+                            android:textAllCaps="true"
+                            android:letterSpacing="0.04"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_medium"
+                            android:includeFontPadding="false"/>
+
+                        <Button
+                            android:id="@+id/uploader1"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/radio_background"
+                            android:text="@string/upload_image"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textSize="13sp"
+                            android:letterSpacing="0.04"
+                            android:textAllCaps="true"
+                            android:includeFontPadding="false" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:weightSum="3"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/upload_your_identity_proof"
+                        android:textAlignment="center"
+                        android:textColor="@color/blue1"
+                        android:textSize="16sp"
+                        android:textAllCaps="true"
+                        tools:ignore="RtlCompat"
+                        android:letterSpacing="0.04"
+                        android:justificationMode="inter_word"
+                        tools:targetApi="o"
+                        android:fontFamily="@font/poppins_bold"
+                        android:includeFontPadding="false"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <Button
+                            android:id="@+id/chooser2"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:background="@drawable/radio_background"
+                            android:text="@string/choose_image"
+                            android:textSize="13sp"
+                            android:textAllCaps="true"
+                            android:letterSpacing="0.03"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_medium"
+                            android:includeFontPadding="false" />
+
+                        <Button
+                            android:id="@+id/uploader2"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/radio_background"
+                            android:text="@string/upload_image"
+                            android:textSize="13sp"
+                            android:textAllCaps="true"
+                            android:letterSpacing="0.03"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/poppins_medium"
+                            android:includeFontPadding="false"/>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/chose"
+                    android:text="@string/choose_your_image"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="10dp"/>
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="6dp"
+                    android:scaleType="fitXY"
+                    android:padding="12dp"
+                    android:src="@drawable/image_will"/>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:id="@+id/profilenext_button"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/poppins_medium"
+                android:letterSpacing="0.08"
+                android:textSize="19sp"
+                android:layout_marginBottom="28dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_login"
+                android:text="@string/next"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
